@@ -4,7 +4,7 @@ apiVersion: apiextensions.k8s.io/v1
 kind: CustomResourceDefinition
 metadata:
   annotations:
-    controller-gen.kubebuilder.io/version: v0.4.0
+    controller-gen.kubebuilder.io/version: v0.4.1
   creationTimestamp: null
   name: cronjobs.batch.tutorial.kubebuilder.io
 spec:
@@ -37,7 +37,7 @@ spec:
             description: CronJobSpec defines the desired state of CronJob
             properties:
               foo:
-                description: Foo is an example field of CronJob. Edit CronJob_types.go
+                description: Foo is an example field of CronJob. Edit cronjob_types.go
                   to remove/update
                 type: string
             type: object
@@ -47,6 +47,8 @@ spec:
         type: object
     served: true
     storage: true
+    subresources:
+      status: {}
 status:
   acceptedNames:
     kind: ""
